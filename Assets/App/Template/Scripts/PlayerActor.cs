@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace App.Template
 {
-    public class PlayerActor : MonoBehaviour
+    public class PlayerActor : Actor
     {
         public Transform ownTransform { get; private set; }
 
@@ -12,22 +12,22 @@ namespace App.Template
         {
             ownTransform = transform;
         }
-        public void MoveUp()
+        public override void MoveUp()
         {
             ownTransform.position = ownTransform.position + Vector3.up;
         }
 
-        public void MoveDown()
+        public override void MoveDown()
         {
             ownTransform.position = ownTransform.position + Vector3.down;
         }
 
-        public void MoveRight()
+        public override void MoveRight()
         {
             ownTransform.position = ownTransform.position + Vector3.right;
         }
 
-        public void MoveLeft()
+        public override void MoveLeft()
         {
             ownTransform.position = ownTransform.position + Vector3.left;
         }
