@@ -2,6 +2,14 @@ using App.Template;
 
 namespace App.Commands
 {
+    public enum CommandType
+    {
+        Up,
+        Down,
+        Right,
+        Left
+    }
+
     public class Command
     {
         public Command() { }
