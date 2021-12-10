@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace App.Template
 {
-    public class Actor : MonoBehaviour
+    public abstract class Actor : MonoBehaviour
     {
         public virtual void MoveUp() { }
         public virtual void MoveDown() { }
