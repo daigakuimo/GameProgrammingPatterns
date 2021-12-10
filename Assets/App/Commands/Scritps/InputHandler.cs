@@ -25,6 +25,9 @@ namespace App.Commands
             RegisterEvent();
         }
 
+        /// <summary>
+        /// コマンドインスタンス生成    
+        /// </summary>
         private void SetCommand()
         {
             _buttonW = GenerateCommand(buttonWCommand);
@@ -33,6 +36,11 @@ namespace App.Commands
             _buttonA = GenerateCommand(buttonACommand);
         }
 
+        /// <summary>
+        /// コマンドタイプ別にインスタンス生成  
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         private Command GenerateCommand(CommandType type)
         {
             switch (type)
@@ -50,6 +58,9 @@ namespace App.Commands
             }
         }
 
+        /// <summary>
+        /// キー入力イベントの登録
+        /// </summary>
         private void RegisterEvent()
         {
             this.UpdateAsObservable()
