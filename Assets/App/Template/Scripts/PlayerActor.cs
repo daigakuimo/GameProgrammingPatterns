@@ -2,17 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerActor : MonoBehaviour
+namespace App.Template
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerActor : MonoBehaviour
     {
-        
-    }
+        public Transform ownTransform { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Awake()
+        {
+            ownTransform = transform;
+        }
+        public void MoveUp()
+        {
+            ownTransform.position = ownTransform.position + Vector3.up;
+        }
+
+        public void MoveDown()
+        {
+            ownTransform.position = ownTransform.position + Vector3.down;
+        }
+
+        public void MoveRight()
+        {
+            ownTransform.position = ownTransform.position + Vector3.right;
+        }
+
+        public void MoveLeft()
+        {
+            ownTransform.position = ownTransform.position + Vector3.left;
+        }
     }
 }
+
