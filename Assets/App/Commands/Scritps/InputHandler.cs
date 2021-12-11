@@ -24,8 +24,6 @@ namespace App.Commands
 
         private void Start()
         {
-            // SetCommand();
-
             RegisterEvent();
         }
 
@@ -118,6 +116,10 @@ namespace App.Commands
                 });
         }
 
+        /// <summary>
+        /// コマンド配列に新しいコマンド追加
+        /// </summary>
+        /// <param name="command"></param>
         private void AddCommandArray(Command command)
         {
 
@@ -127,7 +129,7 @@ namespace App.Commands
 
                 commands[commandsCurrentIndex] = command;
 
-                DeleteCammandArray(commandsCurrentIndex + 1);
+                DeleteCommandArray(commandsCurrentIndex + 1);
 
                 return;
             }
@@ -137,7 +139,11 @@ namespace App.Commands
             commands[commandsCurrentIndex] = command;
         }
 
-        private void DeleteCammandArray(int deleteStartIndex)
+        /// <summary>
+        /// コマンド配列のコマンドを削除
+        /// </summary>
+        /// <param name="deleteStartIndex"></param>
+        private void DeleteCommandArray(int deleteStartIndex)
         {
             for (var i = deleteStartIndex; i < MaxCommandsLength; i++)
             {
@@ -145,6 +151,9 @@ namespace App.Commands
             }
         }
 
+        /// <summary>
+        /// 1番古いコマンドを消して前に詰める
+        /// </summary>
         private void PushOutOldCommand()
         {
             for (var i = 1; i < MaxCommandsLength; i++)
@@ -153,6 +162,9 @@ namespace App.Commands
             }
         }
 
+        /// <summary>
+        /// 取り消し
+        /// </summary>
         private void Undo()
         {
             if (commandsCurrentIndex <= -1) return;
@@ -160,6 +172,9 @@ namespace App.Commands
             commands[commandsCurrentIndex--].Undo();
         }
 
+        /// <summary>
+        /// 再実行
+        /// </summary>
         private void Redo()
         {
             if (commandsCurrentIndex + 1 >= MaxCommandsLength) return;
