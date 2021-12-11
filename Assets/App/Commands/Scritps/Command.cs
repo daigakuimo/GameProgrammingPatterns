@@ -14,58 +14,83 @@ namespace App.Commands
     {
         public Command() { }
 
-        public virtual void Execute(Actor actor) { }
+        public virtual void Execute() { }
+
+        public virtual void Undo() { }
     }
 
     public class MoveUpCommand : Command
     {
-        public MoveUpCommand()
+        Actor actor;
+        public MoveUpCommand(Actor actor)
         {
-
+            this.actor = actor;
         }
 
-        public override void Execute(Actor actor)
+        public override void Execute()
         {
             actor.MoveUp();
         }
-    }
 
-    public class MoveDownCommand : Command
-    {
-        public MoveDownCommand()
-        {
-
-        }
-
-        public override void Execute(Actor actor)
+        public override void Undo()
         {
             actor.MoveDown();
         }
     }
 
-    public class MoveRightCommand : Command
+    public class MoveDownCommand : Command
     {
-        public MoveRightCommand()
+        Actor actor;
+        public MoveDownCommand(Actor actor)
         {
-
+            this.actor = actor;
         }
 
-        public override void Execute(Actor actor)
+        public override void Execute()
+        {
+            actor.MoveDown();
+        }
+
+        public override void Undo()
+        {
+            actor.MoveUp();
+        }
+    }
+
+    public class MoveRightCommand : Command
+    {
+        Actor actor;
+        public MoveRightCommand(Actor actor)
+        {
+            this.actor = actor;
+        }
+
+        public override void Execute()
         {
             actor.MoveRight();
+        }
+        public override void Undo()
+        {
+            actor.MoveLeft();
         }
     }
 
     public class MoveLeftCommand : Command
     {
-        public MoveLeftCommand()
+        Actor actor;
+        public MoveLeftCommand(Actor actor)
         {
-
+            this.actor = actor;
         }
 
-        public override void Execute(Actor actor)
+        public override void Execute()
         {
             actor.MoveLeft();
+        }
+
+        public override void Undo()
+        {
+            actor.MoveRight();
         }
     }
 

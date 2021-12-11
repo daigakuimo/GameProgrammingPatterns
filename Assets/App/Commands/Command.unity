@@ -6915,10 +6915,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerActor: {fileID: 250814773}
-  buttonWCommand: 1
-  buttonSCommand: 0
-  buttonDCommand: 3
-  buttonACommand: 2
+  buttonWCommand: 0
+  buttonSCommand: 1
+  buttonDCommand: 2
+  buttonACommand: 3
 --- !u!1 &695235117
 GameObject:
   m_ObjectHideFlags: 0
