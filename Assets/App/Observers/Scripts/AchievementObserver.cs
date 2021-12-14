@@ -5,17 +5,12 @@ namespace App.Observers
 {
     public class AchievementObserver : IObserver
     {
-        private UnLockAchievementRepository _unLockAchievementRepository;
-        // public AchievementObserver(UnLockAchievementRepository unLockAchievementRepository)
-        // {
-        //     _unLockAchievementRepository = unLockAchievementRepository;
-        // }
-
         public void OnNotify(Actor actor, Event receiveEvent)
         {
             switch (receiveEvent)
             {
                 case Event.EventPlayerScreenOut:
+                    UnLock(Achievement.AchievementPlayerScreenOut);
                     break;
                 default:
                     break;
