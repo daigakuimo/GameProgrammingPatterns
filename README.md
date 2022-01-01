@@ -7,6 +7,6 @@
 
 [Templateパターン](https://github.com/daigakuimo/GameProgrammingPatterns/tree/main/Assets/App/Template)
 
-[Observerパターン](https://github.com/daigakuimo/GameProgrammingPatterns/tree/main/Assets/App/Observer)
+[Observerパターン](https://github.com/daigakuimo/GameProgrammingPatterns/tree/main/Assets/App/Observers)
 
 
